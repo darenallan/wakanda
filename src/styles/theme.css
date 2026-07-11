@@ -1,0 +1,314 @@
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  --font-size: 16px;
+
+  /* ============================================================
+     WAKANDA — design tokens (noir · or · terracotta · blanc cassé)
+     Aucune teinte froide. Jamais de violet/bleu/rose.
+     ============================================================ */
+
+  /* Grounds */
+  --obsidian: #0a0806;        /* fond principal — noir obsidienne chaud */
+  --charcoal-warm: #14110d;   /* fond secondaire — charbon chaud */
+  --charcoal-raised: #1b1710; /* surfaces surélevées / cartes texturées */
+
+  /* Métaux */
+  --gold: #c9a24b;            /* or primaire */
+  --gold-bright: #e8c878;     /* or lumineux (accents, dégradés) */
+  --brass: #8a6e2f;           /* or profond / laiton — états secondaires & occupé */
+
+  /* Accent culturel */
+  --terracotta: #b5502e;      /* CTA secondaires, hover, ocre */
+  --terracotta-soft: #c9663f;
+
+  /* Encres */
+  --cream: #f5efe3;           /* texte principal — blanc cassé chaud */
+  --sand: #a69b87;            /* texte secondaire */
+
+  /* Alias legacy (mappés vers la charte chaude — surtout pas de froid) */
+  --champagne: var(--gold-bright);
+  --gold-deep: var(--brass);
+  --bronze: var(--brass);
+  --charcoal: var(--obsidian);
+  --charcoal-soft: var(--charcoal-warm);
+  --occupied: var(--brass);
+  --violet: var(--brass);
+  --violet-bright: var(--gold-bright);
+  --royal-purple: var(--charcoal-warm);
+  --royal-purple-deep: var(--obsidian);
+
+  --font-display: 'Instrument Serif', serif;
+  --font-serif: 'Marcellus', serif;
+  --font-mark: 'Cinzel', serif;
+  --font-sans: 'Manrope', sans-serif;
+
+  --background: var(--obsidian);
+  --foreground: var(--cream);
+  --card: var(--charcoal-warm);
+  --card-foreground: var(--cream);
+  --popover: var(--charcoal-warm);
+  --popover-foreground: var(--cream);
+  --primary: var(--gold);
+  --primary-foreground: #1a1206;
+  --secondary: #1c1710;
+  --secondary-foreground: var(--cream);
+  --muted: #171410;
+  --muted-foreground: var(--sand);
+  --accent: var(--terracotta);
+  --accent-foreground: var(--cream);
+  --destructive: var(--terracotta);
+  --destructive-foreground: #ffffff;
+  --border: rgba(201, 162, 75, 0.16);
+  --input: rgba(245, 239, 227, 0.03);
+  --input-background: rgba(245, 239, 227, 0.03);
+  --switch-background: #2a2114;
+  --font-weight-medium: 500;
+  --font-weight-normal: 400;
+  --ring: var(--gold);
+  --chart-1: oklch(0.646 0.222 41.116);
+  --chart-2: oklch(0.6 0.118 184.704);
+  --chart-3: oklch(0.398 0.07 227.392);
+  --chart-4: oklch(0.828 0.189 84.429);
+  --chart-5: oklch(0.769 0.188 70.08);
+  --radius: 0.625rem;
+  --sidebar: oklch(0.985 0 0);
+  --sidebar-foreground: oklch(0.145 0 0);
+  --sidebar-primary: #030213;
+  --sidebar-primary-foreground: oklch(0.985 0 0);
+  --sidebar-accent: oklch(0.97 0 0);
+  --sidebar-accent-foreground: oklch(0.205 0 0);
+  --sidebar-border: oklch(0.922 0 0);
+  --sidebar-ring: oklch(0.708 0 0);
+}
+
+.dark {
+  --background: oklch(0.145 0 0);
+  --foreground: oklch(0.985 0 0);
+  --card: oklch(0.145 0 0);
+  --card-foreground: oklch(0.985 0 0);
+  --popover: oklch(0.145 0 0);
+  --popover-foreground: oklch(0.985 0 0);
+  --primary: oklch(0.985 0 0);
+  --primary-foreground: oklch(0.205 0 0);
+  --secondary: oklch(0.269 0 0);
+  --secondary-foreground: oklch(0.985 0 0);
+  --muted: oklch(0.269 0 0);
+  --muted-foreground: oklch(0.708 0 0);
+  --accent: oklch(0.269 0 0);
+  --accent-foreground: oklch(0.985 0 0);
+  --destructive: oklch(0.396 0.141 25.723);
+  --destructive-foreground: oklch(0.637 0.237 25.331);
+  --border: oklch(0.269 0 0);
+  --input: oklch(0.269 0 0);
+  --ring: oklch(0.439 0 0);
+  --font-weight-medium: 500;
+  --font-weight-normal: 400;
+  --chart-1: oklch(0.488 0.243 264.376);
+  --chart-2: oklch(0.696 0.17 162.48);
+  --chart-3: oklch(0.769 0.188 70.08);
+  --chart-4: oklch(0.627 0.265 303.9);
+  --chart-5: oklch(0.645 0.246 16.439);
+  --sidebar: oklch(0.205 0 0);
+  --sidebar-foreground: oklch(0.985 0 0);
+  --sidebar-primary: oklch(0.488 0.243 264.376);
+  --sidebar-primary-foreground: oklch(0.985 0 0);
+  --sidebar-accent: oklch(0.269 0 0);
+  --sidebar-accent-foreground: oklch(0.985 0 0);
+  --sidebar-border: oklch(0.269 0 0);
+  --sidebar-ring: oklch(0.439 0 0);
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-input-background: var(--input-background);
+  --color-switch-background: var(--switch-background);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: var(--font-sans);
+  }
+
+  h1, h2, h3, h4 {
+    font-family: var(--font-display);
+    letter-spacing: 0;
+    font-weight: 400;
+  }
+
+  /**
+  * Default typography styles for HTML elements (h1-h4, p, label, button, input).
+  * These are in @layer base, so Tailwind utility classes (like text-sm, text-lg) automatically override them.
+  */
+
+  html {
+    font-size: var(--font-size);
+  }
+
+  h1 {
+    font-size: var(--text-2xl);
+    font-weight: var(--font-weight-medium);
+    line-height: 1.5;
+  }
+
+  h2 {
+    font-size: var(--text-xl);
+    font-weight: var(--font-weight-medium);
+    line-height: 1.5;
+  }
+
+  h3 {
+    font-size: var(--text-lg);
+    font-weight: var(--font-weight-medium);
+    line-height: 1.5;
+  }
+
+  h4 {
+    font-size: var(--text-base);
+    font-weight: var(--font-weight-medium);
+    line-height: 1.5;
+  }
+
+  label {
+    font-size: var(--text-base);
+    font-weight: var(--font-weight-medium);
+    line-height: 1.5;
+  }
+
+  button {
+    font-size: var(--text-base);
+    font-weight: var(--font-weight-medium);
+    line-height: 1.5;
+  }
+
+  input {
+    font-size: var(--text-base);
+    font-weight: var(--font-weight-normal);
+    line-height: 1.5;
+  }
+}
+
+/* Hide scrollbars until scrolling */
+* {
+  scrollbar-width: none;
+}
+*::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+}
+
+.font-display { font-family: var(--font-display); }
+.font-serif-lux { font-family: var(--font-serif); }
+.font-sans-lux { font-family: var(--font-sans); }
+.font-mark { font-family: var(--font-mark); }
+
+@keyframes pulse-glow {
+  0%, 100% { opacity: 0.55; }
+  50% { opacity: 1; }
+}
+.animate-pulse-glow { animation: pulse-glow 2.6s ease-in-out infinite; }
+
+/* ============================================================
+   Texture & profondeur tactile (référence Awwwards)
+   ============================================================ */
+
+/* Grain fixe très subtil (~3%) posé au-dessus des fonds sombres */
+.grain-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 60;
+  pointer-events: none;
+  opacity: 0.035;
+  mix-blend-mode: overlay;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+/* Fond de carte légèrement texturé (dégradé + fibre) au lieu d'aplat */
+.surface-textured {
+  background-color: var(--charcoal-raised);
+  background-image:
+    radial-gradient(120% 100% at 0% 0%, rgba(201, 162, 75, 0.05), transparent 55%),
+    repeating-linear-gradient(135deg, rgba(245, 239, 227, 0.014) 0 2px, transparent 2px 5px);
+}
+
+/* Liseré or fin pour signaler le luxe sur les visuels */
+.frame-gold { box-shadow: inset 0 0 0 1px rgba(201, 162, 75, 0.35); }
+
+/* ============================================================
+   Micro-interactions — CTA à remplissage or animé
+   ============================================================ */
+
+/* Fill or de gauche à droite */
+.cta-sweep { position: relative; overflow: hidden; isolation: isolate; }
+.cta-sweep::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: linear-gradient(90deg, var(--gold-deep), var(--gold), var(--gold-bright));
+  transform: translateX(-101%);
+  transition: transform 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.cta-sweep:hover::before { transform: translateX(0); }
+
+/* Fill terracotta qui se propage depuis le centre */
+.cta-bloom { position: relative; overflow: hidden; isolation: isolate; }
+.cta-bloom::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: var(--terracotta);
+  transform: scaleX(0);
+  transform-origin: center;
+  transition: transform 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.cta-bloom:hover::before { transform: scaleX(1); }
+
+/* ============================================================
+   Curseur custom — sceau Adinkra (Gye Nyame stylisé) doré
+   ============================================================ */
+.cursor-seal,
+.cursor-seal * {
+  cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='30' height='30' viewBox='0 0 30 30'%3E%3Ccircle cx='15' cy='15' r='13' fill='none' stroke='%23c9a24b' stroke-width='1.4'/%3E%3Ccircle cx='15' cy='15' r='2.2' fill='%23e8c878'/%3E%3Cpath d='M15 5v6M15 19v6M5 15h6M19 15h6' stroke='%23c9a24b' stroke-width='1.2' stroke-linecap='round'/%3E%3C/svg%3E") 15 15, pointer;
+}
